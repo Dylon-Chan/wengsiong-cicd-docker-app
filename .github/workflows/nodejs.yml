@@ -32,5 +32,6 @@ jobs:
             - name: Build the Docker image
               run: docker build -t nodejs-app .
             - name: Run the docker image to test
-              run: 
-                docker run -d -p 8080:8080 nodejs-app npm run test
+              run: docker run -d -p 8080:8080 nodejs-app
+            - name: Run the unit tests
+              run: npm run test
