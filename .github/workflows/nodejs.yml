@@ -11,8 +11,24 @@ jobs:
         steps:
             - name: Checkout repository code
               uses: actions/checkout@v3
-            - name: Install the dependencies
-              run: npm install
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
             - name: Run the unit tests
-              run: npm run test  
-    
+              run: npm run test
+    docker-build-and-test:
+        runs-on: ubuntu-latest
+        needs: unit-testing
+        services:
+            docker:
+                image: docker:stable
+                options: --privileged
+        steps:
+            - name: Checkout repository code
+              uses: actions/checkout@v3
+            - name: Build the Docker image
+              run: docker build -t nodejs-app .
+            - name: Run the docker image to test
+              run: 
+                docker run -d -p 8080:8080 nodejs-app npm run test
