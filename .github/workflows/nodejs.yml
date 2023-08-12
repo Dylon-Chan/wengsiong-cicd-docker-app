@@ -16,6 +16,7 @@ jobs:
               with:
                 node-version: 18
             - name: Run the unit tests
+              run: npm ci
               run: npm run test
     docker-build-and-test:
         runs-on: ubuntu-latest
