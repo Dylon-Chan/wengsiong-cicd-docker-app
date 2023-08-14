@@ -98,3 +98,11 @@ jobs:
                 terraform init
                 terraform apply -auto-approve -target=aws_ecs_cluster.ws-docker-nodejs-cluster -target=aws_ecs_task_definition.ws-docker-nodejs-td -target=aws_security_group.ecs-sg -target=aws_ecs_service.ws-docker-nodejs-service
                 terraform apply -auto-approve
+            - name: Set up Terraform outputs
+              id: tf-outputs
+              working-directory: ./ecs
+              run: echo "::set-output name=access_url::$(terraform output -json all_access_urls | jq -r 'to_entries[0].value')"
+              outputs: 
+                access_url: ${{ steps.tf-outputs.outputs.access_url }}
+            - name: Echo Access URL
+              run: echo "The Access URL is ${{ steps.tf-outputs.outputs.access_url }}"
