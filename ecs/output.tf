@@ -11,7 +11,7 @@ data "aws_network_interface" "all" {
   for_each = toset(data.aws_network_interfaces.all.ids)
     id = each.key
 
-  depends_on = [data.aws_network_interfaces.all]
+  depends_on = [aws_security_group.ecs-sg , data.aws_network_interfaces.all]
 }
 
 output "all_access_urls" {
