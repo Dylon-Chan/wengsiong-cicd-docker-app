@@ -102,7 +102,7 @@ jobs:
               id: tf-outputs
               working-directory: ./ecs
               run: echo "::set-output name=access_url::$(terraform output -json all_access_urls | jq -r 'to_entries[0].value')"
-              outputs: 
-                access_url: ${{ steps.tf-outputs.outputs.access_url }}
             - name: Echo Access URL
               run: echo "The Access URL is ${{ steps.tf-outputs.outputs.access_url }}"
+        outputs: 
+                access_url: ${{ steps.tf-outputs.outputs.access_url }}
