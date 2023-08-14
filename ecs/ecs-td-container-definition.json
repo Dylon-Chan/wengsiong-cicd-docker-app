@@ -1,0 +1,12 @@
+[{
+    "name": "ws-docker-nodejs-td",
+    "image": "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/wengsiong-docker-nodejs-app:latest",
+    "portMappings": [
+        {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "tcp"
+        }
+    ],
+    "essential": true
+}]
