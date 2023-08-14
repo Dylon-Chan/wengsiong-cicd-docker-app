@@ -92,13 +92,9 @@ jobs:
               run: |
                 docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
                 docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-            - name: Create Security Group for AWS ECS first
-              run: |
-                cd ecs
-                terraform init
-                terraform apply -auto-approve -target=aws_security_group.ecs
             - name: Create AWS ECS Cluster, Task Definition and Service
               run: |
                 cd ecs
                 terraform init
+                terraform apply -auto-approve -target=aws_security_group.ecs
                 terraform apply -auto-approve
