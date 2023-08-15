@@ -97,10 +97,12 @@ jobs:
                 cd ecs
                 terraform init
                 terraform apply -auto-approve -target=aws_ecs_cluster.ws-docker-nodejs-cluster -target=aws_ecs_task_definition.ws-docker-nodejs-td -target=aws_security_group.ecs-sg -target=aws_ecs_service.ws-docker-nodejs-service
+                
             - name: Set up Terraform outputs
               id: tf-outputs
               working-directory: ./ecs
               run: |
+                cd ecs
                 terraform apply -auto-approve
                 echo "access_url=$(terraform output -json all_access_urls | jq -r 'to_entries[0].value')" >> $GITHUB_ENV
             - name: Echo Access URL
