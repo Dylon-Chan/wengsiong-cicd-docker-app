@@ -118,7 +118,7 @@ git push
 3. Check and monitor the workflow status in the Actions tab of the repository.
 4. You should see the workflow running and the test passed as shown below:
 
-![workflow#3](./images/workflow#3.png)
+![workflow#3](./images/workflow-3.png)
 
 ### Create Docker image to containerize the Nodejs Application:
 
@@ -187,7 +187,7 @@ jobs:
 3. Check and monitor the workflow status in the Actions tab of the repository.
 4. You should see the workflow running and the test passed as shown below:
 
-![workflow#8](./images/workflow#8.png)
+![workflow#8](./images/workflow-8.png)
 
 ### Create AWS ECR Private Repository using Terraform:
 
@@ -285,7 +285,7 @@ jobs:
 4. Check and monitor the workflow status in the Actions tab of the repository.
 5. You should see the workflow running and the test passed as shown below:
 
-![workflow#11](./images/workflow#11.png)
+![workflow#11](./images/workflow-11.png)
 
 ### Create AWS ECS Cluster, Task Definition and Service using Terraform:
 
@@ -441,7 +441,7 @@ jobs:
 3. Check and monitor the workflow status in the Actions tab of the repository.
 4. You should see the workflow running and the test passed as shown below:
 
-![workflow#28](./images/workflow#28.png)
+![workflow#28](./images/workflow-28.png)
 
 5. The Github Actions workflow will show the Access URL of the web application as shown below:
 
