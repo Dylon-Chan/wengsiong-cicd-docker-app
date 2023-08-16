@@ -1,6 +1,6 @@
 # CICD Pipeline for Containerized Nodejs Application in AWS
 
-Welcome to a demonstration repository that showcases a continuous integration and continuous deployment (CICD) pipeline for a Node.js application, leveraging the Express framework. The application serves up a greeting message and displays the elapsed time since its initiation. Dive in to learn how we containerize this with Docker and subsequently deploy it on AWS ECS (Amazon Elastic Container Service).
+Welcome to a demonstration repository that showcases a continuous integration and continuous deployment (CICD) pipeline for a Node.js application, leveraging the Express framework. The application serves up a greeting message and displays the elapsed time since its initiation. Dive in to learn how I containerize this with Docker and subsequently deploy it on AWS ECS (Amazon Elastic Container Service).
 
 ## Table of Contents
 
